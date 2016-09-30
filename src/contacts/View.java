@@ -69,20 +69,23 @@ public class View extends javax.swing.JFrame {
             
             @Override
             public void setValueAt(Object value, int row, int col) {
-            rowData[row][col] = value;
-            fireTableCellUpdated(row, col);
-            // select the column of book to edit and change
-            switch (col){
-                case 0 : myPhonebook.SetName(row, (String)value);
-                    break;
-                case 1 : myPhonebook.SetAddress(row, (String)value);
-                    break;
-                case 2 : myPhonebook.SetNumber(row, (String)value);
-                    break;
-                default:
-                    ;
-            }
-            myPhonebook.SetNumber(row, (String)value);
+                rowData[row][col] = value;
+                fireTableCellUpdated(row, col);
+                System.out.println(col);
+                // select the column of book to edit and change
+                switch (col){
+                    case 0 : myPhonebook.SetName(row, (String)value);
+                        break;
+                    case 1 : myPhonebook.SetAddress(row, (String)value);
+                        System.out.println("toto");
+                        System.out.println(myPhonebook.getAddress(row));
+                        System.out.println(myPhonebook.getNumber(row));
+                            break;
+                    case 2 : myPhonebook.SetNumber(row, (String)value);
+                        break;
+                    default:
+                        ;
+                }
             }
         };
         jTable1.setModel(model);

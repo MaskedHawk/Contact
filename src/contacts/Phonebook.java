@@ -95,7 +95,7 @@ public class Phonebook {
             if(!file.exists()){
                 file.createNewFile();
             }
-            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+            FileWriter fw = new FileWriter(file.getAbsoluteFile(), false);
             try (BufferedWriter bw = new BufferedWriter(fw)) {
                 for(int i = 0; i < mybook.size() ; i++)
                 {
