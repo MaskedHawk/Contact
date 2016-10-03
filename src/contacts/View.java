@@ -93,7 +93,6 @@ public class View extends javax.swing.JFrame {
         
         tr.setRowFilter(RowFilter.regexFilter("(?i)" + input, 0));
     }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -355,9 +354,14 @@ public class View extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        
         int index = jTable1.getSelectedRow();
-        if(index!=-1) myPhonebook.remove(index);
+        String tmpNumber = new String();
+        String tmpName = new String();
+        tmpName = (String)jTable1.getValueAt(index, 0);
+        tmpNumber = (String)jTable1.getValueAt(index, 2);
+        index = myPhonebook.find(tmpName, tmpNumber);
+        if(index != -1) myPhonebook.remove(index);
         else{
             JOptionPane.showMessageDialog(this, "Select item to delete");
             return;

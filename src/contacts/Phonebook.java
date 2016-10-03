@@ -49,6 +49,17 @@ public class Phonebook {
     public void remove(int index){
         mybook.remove(index);
     }
+    
+    public int find(String tmpName, String tmpNumber)
+    {
+         for(int i = 0; i < mybook.size() ;i++)
+         {
+             if(tmpName.equals(mybook.get(i).getname())
+                     && tmpNumber.equals(mybook.get(i).getnumber()))
+                return i;
+         }
+         return -1;
+    }
    
     public Phonebook readcsv(String filename){
         if(!filename.toLowerCase().contains(".csv"))
@@ -56,7 +67,7 @@ public class Phonebook {
         Phonebook tmpbook = new Phonebook();
         String csvFile = filename;
 	BufferedReader file = null;
-        String line = "";
+        String line;
 	String csvSplit = ";";
 		
 	try {
