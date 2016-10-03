@@ -54,8 +54,8 @@ public class Phonebook {
     {
          for(int i = 0; i < mybook.size() ;i++)
          {
-             if(tmpName.equals(mybook.get(i).getname())
-                     && tmpNumber.equals(mybook.get(i).getnumber()))
+             if(tmpNumber.equals(mybook.get(i).getnumber())
+                     && tmpName.equals(mybook.get(i).getname()))
                 return i;
          }
          return -1;

@@ -10,7 +10,7 @@ import javax.swing.RowFilter;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-
+import javax.swing.ListSelectionModel;
 /**
  *
  * @author Alexis
@@ -126,6 +126,7 @@ public class View extends javax.swing.JFrame {
         setTitle("Contacts");
         setResizable(false);
 
+        jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
